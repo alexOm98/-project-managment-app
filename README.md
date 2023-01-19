@@ -1,1 +1,1 @@
-# -project-managment-app
+# project-management-app
