@@ -185,6 +185,9 @@ export const columnDataSilce = createSlice({
     setColumnData(state, action) {
       state.columnsData = sortByOrder(action.payload);
     },
+    resetColumnData(state) {
+      state.columnsData = [];
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -258,4 +261,4 @@ export const columnDataSilce = createSlice({
 
 export default columnDataSilce.reducer;
 
-export const { setColumnData } = columnDataSilce.actions;
+export const { setColumnData, resetColumnData } = columnDataSilce.actions;

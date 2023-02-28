@@ -12,6 +12,7 @@ import {
   IAddColumn,
   ICreateTask,
   IDeleteTask,
+  resetColumnData,
   setColumnData,
 } from 'store/columnDataSlice';
 import { useParams } from 'react-router-dom';
@@ -39,6 +40,7 @@ const TasksPage = () => {
 
   useLayoutEffect(() => {
     if (id) {
+      dispatch(resetColumnData());
       dispatch(getColumn(id));
       dispatch(getUsersFetch());
       dispatch(getPointsFetch(userId));
@@ -51,7 +53,6 @@ const TasksPage = () => {
     } else {
       isRender.current = true;
     }
-    console.log(columns);
   }, [columns]);
 
   useEffect(() => {
@@ -141,7 +142,7 @@ const TasksPage = () => {
 
   if (!columns.length && columnloading) {
     return (
-      <div style={{ height: 'calc(100vh - 245px)' }}>
+      <div style={{ height: 'calc(100vh - 243px)' }}>
         <Spin
           size="large"
           style={{
