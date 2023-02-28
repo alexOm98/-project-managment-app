@@ -11,10 +11,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 58%;
+  transition: all ease-in-out 0.3s;
 
   &:hover {
     transform: scale(0.95);
-    transition: all 0.5s;
     cursor: pointer;
   }
 }

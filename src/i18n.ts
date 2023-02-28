@@ -161,7 +161,7 @@ i18n.use(initReactI18next).init({
           taskDescPlaceHolder: 'input task description',
         },
         confirmPopap: {
-          confirmMessage: 'A you sure?',
+          confirmMessage: 'Are you sure?',
         },
         message: {
           boardcreate: 'Project added',

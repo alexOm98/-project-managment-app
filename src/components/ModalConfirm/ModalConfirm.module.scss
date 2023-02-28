@@ -5,8 +5,9 @@
     width: 2.5rem;
     height: 2.5rem;
     background-size: cover;
-    align-self: flex-start;
     cursor: pointer;
+    position: absolute;
+    right: 10px;
   }
 
   &__column {

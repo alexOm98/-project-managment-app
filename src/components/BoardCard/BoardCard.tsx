@@ -15,7 +15,7 @@ interface BoardCardProps {
 const BoardCard: React.FC<BoardCardProps> = ({ board, userID, onCloseClick, onEditClick }) => {
   const getTitle = (fetchedTitle: string) => {
     const title = fetchedTitle.slice(0, fetchedTitle.indexOf('|'));
-    return title.length > 5 ? `${title.slice(0, 5)}...` : title;
+    return title.length > 14 ? `${title.slice(0, 11)}...` : title;
   };
 
   const getDescription = (fetchedTitle: string) => {

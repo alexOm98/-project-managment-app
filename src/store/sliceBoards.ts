@@ -46,12 +46,15 @@ export const createUserBoard = createAsyncThunk('createUserBoards', async (board
 });
 
 export const editUserBoard = createAsyncThunk('editUserBoards', async (board: IBoard) => {
+  const token = localStorage.getItem('token');
   const sendBoard = {
     title: board.title,
     owner: board.owner,
     users: [board.owner],
   };
-  await axios.put(`boards/${board._id}`, sendBoard);
+  await axios.put(`boards/${board._id}`, sendBoard, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
   return board;
 });
 

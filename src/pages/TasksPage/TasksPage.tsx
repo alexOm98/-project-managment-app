@@ -51,6 +51,7 @@ const TasksPage = () => {
     } else {
       isRender.current = true;
     }
+    console.log(columns);
   }, [columns]);
 
   useEffect(() => {
@@ -140,9 +141,18 @@ const TasksPage = () => {
 
   if (!columns.length && columnloading) {
     return (
-      <Spin size="large">
-        <div style={{ height: '30vh' }} />
-      </Spin>
+      <div style={{ height: 'calc(100vh - 245px)' }}>
+        <Spin
+          size="large"
+          style={{
+            position: 'fixed',
+            top: '44%',
+            left: '53%',
+            zIndex: '100',
+            transform: 'translate(-50%,-50%)',
+          }}
+        />
+      </div>
     );
   }
 
@@ -180,6 +190,7 @@ const TasksPage = () => {
                 </Column>
               ))}
               {provided.placeholder}
+              {!columns.length && <div className={styles['empty-list']}></div>}
               <ColumnAddButton onClick={createColumnHandler} boardId={id} state={columns} />
             </div>
           )}

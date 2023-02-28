@@ -20,7 +20,7 @@ import './styles/index.scss';
 function App() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  axios.defaults.baseURL = 'https://react-final-task.up.railway.app';
+  axios.defaults.baseURL = 'https://projecct-manager-app.onrender.com';
   useEffect(() => {
     const token = localStorage.getItem('token') as string;
     const id = localStorage.getItem('id') as string;
