@@ -19,7 +19,7 @@ const BoardCard: React.FC<BoardCardProps> = ({ board, userID, onCloseClick, onEd
   };
 
   const getDescription = (fetchedTitle: string) => {
-    const description = fetchedTitle.slice(fetchedTitle.indexOf('|') + 1, -1);
+    const description = fetchedTitle.slice(fetchedTitle.indexOf('|') + 1);
     return description.length > 70 ? `${description.slice(0, 70)}...` : description;
   };
 

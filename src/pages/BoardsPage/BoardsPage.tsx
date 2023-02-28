@@ -24,7 +24,9 @@ const BoardsPage = () => {
       setFilteredBoards([...boardsState.boards]);
       return;
     }
-    const filteredBoards = boardsState.boards.filter((el) => el.title.includes(value));
+    const filteredBoards = boardsState.boards.filter((el) =>
+      el.title.toLowerCase().includes(value.toLowerCase())
+    );
     setFilteredBoards(filteredBoards);
   };
 

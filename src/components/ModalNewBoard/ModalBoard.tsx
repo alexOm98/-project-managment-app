@@ -93,7 +93,7 @@ const ModalLayout: React.FC<ModalProps> = ({ addBoard, editBoard, board, type, u
             label={t('boardPopap.projectDesc')}
             name="description"
             rules={[{ required: false }]}
-            initialValue={board?.title.slice(board?.title.indexOf('|') + 1, -1)}
+            initialValue={board?.title.slice(board?.title.indexOf('|') + 1)}
           >
             <TextArea rows={4} />
           </Form.Item>
