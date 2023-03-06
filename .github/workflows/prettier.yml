@@ -1,22 +1,12 @@
-name: Prettier
-
-on:
-  pull_request:
-  push:
-    branches:
-      - develop
-
+name: Test
+on: push
 jobs:
-  lint:
+  test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: lint
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: npm install
+      - name: Test app
+        run: npm run test
